@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from "react";
-import App from './App';
+import Post from './Post';
 
-test('renders App feature', () => {
-  render(<App />);
+test('renders Post feature', () => {
+  render(<Post />);
 });
