@@ -1,21 +1,32 @@
 import React, { useState, useEffect} from "react";
 import "./Header.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../../store/redditSlice";
 
 function Header() {
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTermLocal, setSearchTermLocal] = useState('');
+    const searchTerm = useSelector((state) => state.reddit.searchTerm);
+    const dispatch = useDispatch();
 
     const onSearchTermChange = (e) => {
-        setSearchTerm(e.target.value);
+        setSearchTermLocal(e.target.value);
     };
+    //console.log(searchTermLocal); //Logging local state to ensure its working
+    
+    useEffect(() => {
+        setSearchTermLocal(searchTerm);
+    }, [searchTerm]);
 
-
-    //console.log(searchTerm); //Logging local state to ensure its working
+    const onSearchTermSubmit = (e) => {
+        e.preventDefault();
+        dispatch(setSearchTerm(searchTermLocal));
+    };
 
     return (
     <header>
-        <form>
+        <form onSubmit={onSearchTermSubmit}>
             <input tpye="text"
-                value={searchTerm}
+                value={searchTermLocal}
                 onChange={onSearchTermChange}
                 placeholder="Search"
                 aria-label="Search posts" />
