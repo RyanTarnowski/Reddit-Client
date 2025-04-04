@@ -1,6 +1,6 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 
-const initialState = {
+export const initialState = {
     posts: [],
     error: false,
     isLoading: false,
