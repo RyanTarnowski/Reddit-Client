@@ -17,10 +17,6 @@ const redditSlice = createSlice({
             state.searchTerm = action.payload;
         },
 
-        setPosts(state, action) {
-            state.posts = action.payload;
-        },
-
         startGetPosts(state) {
             state.isLoading = true;
             state.error = false;

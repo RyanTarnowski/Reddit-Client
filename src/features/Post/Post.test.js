@@ -5,9 +5,11 @@ import { Provider } from 'react-redux';
 import Store from '../../store';
 
 test('renders Post feature', () => {
+  const post = {}
+
   render(
     <Provider store={Store}>
-      <Post />
+      <Post post={post} />
     </Provider>
   );
 });
