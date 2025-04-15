@@ -11,9 +11,6 @@ function App() {
       <main>
         <Feed/>
       </main>
-      <aside>
-        <Subreddits/>
-      </aside>  
     </>
   );
 }

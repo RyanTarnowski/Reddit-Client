@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../../store/redditSlice";
+import Subreddits from "../Subreddits/Subreddits";
 
 function Header() {
     const [searchTermLocal, setSearchTermLocal] = useState('');
@@ -24,11 +25,12 @@ function Header() {
 
     return (
     <header>
+        <Subreddits/>
         <form onSubmit={onSearchTermSubmit}>
             <input tpye="text"
                 value={searchTermLocal}
                 onChange={onSearchTermChange}
-                placeholder="Search"
+                placeholder="Search Posts"
                 aria-label="Search posts" />
             <button type="submit" aria-label="Search">Search</button>
         </form>       
