@@ -11,7 +11,7 @@ function Feed() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchPosts(selectedSubreddit));
+        dispatch(fetchPosts(selectedSubreddit.url));
     }, [selectedSubreddit]);
 
     const onToggleComments = (index) => {

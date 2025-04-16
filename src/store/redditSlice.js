@@ -6,7 +6,10 @@ export const initialState = {
     error: false,
     isLoading: false,
     searchTerm: '',
-    selectedSubreddit: '/r/pics/'  //Default Feed
+    selectedSubreddit: {
+        url: '/r/pics/', 
+        icon_img: "https://b.thumbs.redditmedia.com/VZX_KQLnI1DPhlEZ07bIcLzwR1Win808RIt7zm49VIQ.png"
+    } //Default Feed
 }
 
 const redditSlice = createSlice({

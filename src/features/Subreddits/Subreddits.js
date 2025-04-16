@@ -3,6 +3,7 @@ import "./Subreddits.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubreddits, selectSubreddits } from "../../store/subredditSlice";
 import { setSelectedSubreddit, selectSelectedSubreddit } from "../../store/redditSlice";
+import redditIcon from "../../content/icons8-reddit-96.png"
 
 function Subreddits() {
     const dispatch = useDispatch();
@@ -15,8 +16,9 @@ function Subreddits() {
 
     return (
         <div className="Subreddits">
-            <select onChange={(e) => dispatch(setSelectedSubreddit(e.target.value))} defaultValue="/r/pics/"
-                value={selectedSubreddit}>
+            <img className="SubredditIcon" src={selectedSubreddit.icon_img || redditIcon} />
+            <select className="SubredditSelect" onChange={(e) => dispatch(setSelectedSubreddit(subreddits.find((sr) => sr.url === e.target.value)))} 
+                value={selectedSubreddit.url}>
                 {subreddits.map((subreddit) => (
                     <option key={subreddit.id}
                             value={subreddit.url}
