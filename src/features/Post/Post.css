@@ -1,5 +1,4 @@
 .Post {
-    border: grey 1px solid;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 80%;
@@ -7,6 +6,33 @@
     padding: 10px;
 }
 
+.Post:hover {
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 8px;
+}
+
 .Post img {
     width: 100%;
+}
+
+.PostInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Comments {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Comments:hover {
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 8px;
+}
+
+.CommentInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
