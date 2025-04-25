@@ -10,3 +10,39 @@ header {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.SearchInput {
+    height: 20px;
+    border: none;
+    margin-left: -1px;
+    margin-right: -1px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    clip-path: inset(-8px 0 -8px 1px);
+}
+
+.SearchInput:focus {
+    outline: none;
+}
+
+.Search {
+    height: 22px;
+    font-size: small;
+    border-radius: 0 5px 5px 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    background-color: white;
+}
+
+.Search:hover {
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 8px;
+}
+
+header button::before {
+    content: "🔍 ";
+}

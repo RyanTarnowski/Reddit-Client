@@ -14,10 +14,34 @@
     width: 100%;
 }
 
+.CommentsButton, .UpsButton {
+    font-size: small;
+    align-self: center;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: none;
+    background-color: white;
+}
+
+.CommentsButton:hover, .UpsButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 8px;
+}
+
+.CommentsButton::before {
+    content: "💬 ";
+    font-size: medium;
+}
+
+.UpsButton::before {
+    content: "👍 ";
+    font-size: medium;
+}
+
 .PostInfo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: smaller;
 }
 
 .Comments {
@@ -25,6 +49,7 @@
     padding: 10px;
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow-wrap: break-word;
 }
 
 .Comments:hover {
@@ -35,4 +60,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: smaller;
+}
+
+.FieldTitle {
+    font-size: smaller;
 }

@@ -25,14 +25,16 @@ function Header() {
 
     return (
     <header>
-        <Subreddits/>
+
         <form onSubmit={onSearchTermSubmit}>
-            <input tpye="text"
+        <Subreddits/>
+
+            <input className="SearchInput" type="text"
                 value={searchTermLocal}
                 onChange={onSearchTermChange}
                 placeholder="Search Posts"
                 aria-label="Search posts" />
-            <button type="submit" aria-label="Search">Search</button>
+            <button className="Search" type="submit" aria-label="Search">Search</button>
         </form>       
     </header>
     );
