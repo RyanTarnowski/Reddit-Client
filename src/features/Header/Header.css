@@ -41,8 +41,26 @@ form {
 
 .Search:hover {
     box-shadow: rgba(0, 0, 0, 0.40) 0px 3px 8px;
+    background-color: lightgray;
 }
 
 header button::before {
     content: "🔍 ";
+}
+
+@media only screen and (max-width: 500px) {
+    /*
+    Header {
+      background-color: lightblue;
+    }
+    */
+
+    form {
+        display: block;
+    }
+    
+    .SearchInput {
+        border-radius: 5px 0 0 5px ;
+        clip-path: inset(-8px 0 -8px -8px);
+    }
 }

@@ -17,3 +17,10 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     clip-path: inset(-8px 0 -8px -8px);
 }
+
+@media only screen and (max-width: 500px) {
+    .SubredditSelect {
+        border-radius: 5px 5px 5px 5px;
+        clip-path: none;
+    }
+}

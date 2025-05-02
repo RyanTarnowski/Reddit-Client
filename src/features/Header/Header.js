@@ -25,10 +25,8 @@ function Header() {
 
     return (
     <header>
-
         <form onSubmit={onSearchTermSubmit}>
-        <Subreddits/>
-
+            <Subreddits/>
             <input className="SearchInput" type="text"
                 value={searchTermLocal}
                 onChange={onSearchTermChange}

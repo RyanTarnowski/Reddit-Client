@@ -14,10 +14,15 @@ function Subreddits() {
         dispatch(fetchSubreddits());
     }, [dispatch])
 
+    const onSelectedSubreddit = (e) => { 
+        dispatch(setSelectedSubreddit(subreddits.find((sr) => sr.url === e.target.value)));
+        window.scrollTo({ top: 0, left: 0});
+    };
+
     return (
         <div className="Subreddits">
             <img className="SubredditIcon" src={selectedSubreddit.icon_img || redditIcon} />
-            <select className="SubredditSelect" onChange={(e) => dispatch(setSelectedSubreddit(subreddits.find((sr) => sr.url === e.target.value)))} 
+            <select className="SubredditSelect" onChange={onSelectedSubreddit} 
                 value={selectedSubreddit.url}>
                 {subreddits.map((subreddit) => (
                     <option key={subreddit.id}

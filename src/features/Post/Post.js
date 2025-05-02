@@ -32,12 +32,14 @@ function Post(props) {
             <div className="PostInfo"> 
                 <p><span className="FieldTitle">Posted by:</span> {post.author}</p>
                 <p title={unixToLocalTime(post.created_utc)}><span className="FieldTitle">Posted:</span> {getDateTimeDiff(post.created_utc)} <span className="FieldTitle">ago</span></p>
-                <button className="UpsButton" type="button">
-                    {post.ups}
-                </button>
-                <button className="CommentsButton" type="button" onClick={() => onToggleComments(post.permalink, post.showingComments)}>
-                    {post.num_comments}
-                </button>
+                <div>
+                    <button className="UpsButton" type="button">
+                        {post.ups}
+                    </button>
+                    <button className="CommentsButton" type="button" onClick={() => onToggleComments(post.permalink, post.showingComments)}>
+                        {post.num_comments}
+                    </button>
+                </div>
             </div>
             {renderComments()}
         </div>
