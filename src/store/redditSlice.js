@@ -9,7 +9,10 @@ export const initialState = {
     selectedSubreddit: {
         url: '/r/pics/', 
         icon_img: "https://b.thumbs.redditmedia.com/VZX_KQLnI1DPhlEZ07bIcLzwR1Win808RIt7zm49VIQ.png"
-    } //Default Feed
+    }, //Default Feed
+    isLoadingComments: false,
+    errorComments: false,
+    showingComments: false
 }
 
 const redditSlice = createSlice({
@@ -82,10 +85,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
         //Spread thepost data from reddit and add additional fields for toggling comments:
         const postsWithMetadata = posts.map((post) => ({
             ...post, 
-            comments: [],
-            isLoadingComments: false,
-            errorComments: false,
-            showingComments: false
+            comments: []
         }))
 
         dispatch(getPostsSuccess(postsWithMetadata));
@@ -95,7 +95,7 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
     }
 };
 
-export const fetchComments = (index, permalink, showingComments) => async (dispatch) => {
+export const fetchComments = (index, permalink) => async (dispatch) => {
     try {
         dispatch(startGetComments(index));
         const comments = await getPostComments(permalink);
