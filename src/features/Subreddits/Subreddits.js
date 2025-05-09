@@ -21,7 +21,7 @@ function Subreddits() {
 
     return (
         <div className="Subreddits">
-            <img className="SubredditIcon" src={selectedSubreddit.icon_img || redditIcon} />
+            <img className="SubredditIcon" src={selectedSubreddit.icon_img || redditIcon} alt="Subreddit Icon" />
             <select className="SubredditSelect" onChange={onSelectedSubreddit} 
                 value={selectedSubreddit.url}>
                 {subreddits.map((subreddit) => (

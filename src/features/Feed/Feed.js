@@ -6,13 +6,13 @@ import { fetchComments, fetchPosts, selectFilteredPosts } from "../../store/redd
 
 function Feed() {
     const reddit = useSelector((state) => state.reddit);
-    const { isLoading, error, searchTerm, selectedSubreddit } = reddit;
+    const { selectedSubreddit } = reddit;
     const posts = useSelector(selectFilteredPosts);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchPosts(selectedSubreddit.url));
-    }, [selectedSubreddit]);
+    }, [dispatch, selectedSubreddit.url]);
 
     const onToggleComments = (index) => {
         const getComments = (permalink, showingComments) => {
