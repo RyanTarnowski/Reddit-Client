@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Reddit Client
+
+The goal of this project was to improve my understanding of React/Redux by developing a lightweight read-only Reddit client for browsing subreddits.
+
+This project utilizes the following technilogies:
+- React
+- Redux
+- Javascript
+- HTML
+- CSS
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

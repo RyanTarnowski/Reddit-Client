@@ -1,7 +1,7 @@
 .Post {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width: 80%;
+    width: 50%;
     margin: 10px;
     padding: 10px;
 }
@@ -65,4 +65,16 @@
 
 .FieldTitle {
     font-size: smaller;
+}
+
+@media only screen and (max-width: 1024px) {
+    .Post {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Post {
+        width: 90%;
+    }
 }
